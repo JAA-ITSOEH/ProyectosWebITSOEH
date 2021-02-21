@@ -1,0 +1,153 @@
+/*Se manda a llamar la clase section*/
+.section {
+	position: relative;/*Se establece la posición en relación con su posición normal*/
+	height: 100vh;/*Se asigna la altura del elemento que es igual al 100% de la altura de la ventana gráfica*/
+}
+ /*Se manda a llamar la subclase (section-center) de la clase section*/
+.section .section-center {
+	position: absolute;/*está posicionado en relación con la posicionado más cercano*/
+	top: 50%;/*La posición de un elemento posicionado a 50%*/
+	left: 0;/*No se establece su posición a la izquierda*/
+	right: 0;/*No se establece su posición a la Derecha*/
+	-webkit-transform: translateY(-50%);/*-webkit-transform transforma el espacio junto con translateY
+	el cual es una para mover los elementos a lo largo del eje Y*/
+	transform: translateY(-50%);/*Permite trasladar el espacio de coordenadas del modelo de formato visual CSS*/
+}
+/*# es un selector del elemento titulo del formuario*/
+#titulo {
+	font-family: 'Gabriola', Times, serif;/*especifica una lista priorizada de uno o más nombres de 
+	familias de fuentes*/
+	background-size: cover;/*Se ajusta al tamaño del fondo*/
+	background-position: center; /*Se establece la posición inicial del fondo (centrado)*/
+}
+/*# es un selector del elemento contenido*/
+#contenido {
+	font-family: 'Microsoft YaHei Light';/*especifica una lista priorizada de uno o más nombres de 
+	familias de fuentes*/
+	background-image: url('../imagenes/fondo.jpg');/*Se establece una imagen de fondo para formulario*/
+	background-size: cover;/*Se ajusta el fondo al tamaño del formulario*/
+	background-position: center;/*Se establece la posición inicial del fondo (centrado)*/
+}
+/*# es un selector del elemento contenido y ::before es pseudo-elemento donde en contenido se inserta antes*/
+#contenido::before {
+	content: '';/*Se usa junto pseudo-elemento before o after para generar contenido antes o 
+	despues de un selector contenido*/
+	position: absolute;/*está posicionado en relación con la posicionado más cercano*/
+	left: 0;/*No se establece su posición a la izquierda*/
+	right: 0;/*No se establece su posición a la derecha*/
+	bottom: 0;/*No se establece el borde inferior*/
+	top: 0;/*Especifica parte de la posición de un elemento*/
+	background: rgba(0, 0, 0, 0.6);/*Se establece un color de fondo al fondo de pantala */
+}
+/*Se manda a llamar la clase contenido-form de HTML*/
+.contenido-form {
+	max-width: 650px;/*Define el ancho del formulario*/
+	width: 100%;/*define el ancho del formulario*/
+	margin: auto;/*Establece 0px de margen vertical, y centrado horizontalmente*/
+}
+/*Se manda a llamar la subclase de la clase contenido-form*/
+.contenido-form .form-header {
+	text-align: center;/*text-align especifica la alineación horizontal del texto en un elemento y center 
+	centra el texto*/
+	margin-bottom: 25px;/*Establece el margen inferior del formulario*/
+}
+/*Se manda a llamar la subclase de la clase contenido-form para asignarle estilo al encabezado*/
+.contenido-form .form-header h1 {
+	font-size: 58px;/*Establece el tamaño de la fuente en pixeles*/
+	font-weight: 100;/*Grosor de la letra del titulo*/
+	color: white;/*Color de la letra (titulo)*/
+	margin: 0px;/*Establece margen para todos los lados */
+}
+/*Se manda a llamar la clase contenido-form y especifica que >form abarcara los cambios del formulario*/
+.contenido-form>form {
+	background-color: #101113;/*Se aplca color de fondo en el formulario*/
+	padding: 30px 20px;/*Sirve para la zonas de relleno el primer valor indica el relleno de los 
+	valores verticales y el segundo los valores horizontales*/
+	border-radius: 3px;/*Indica que tan redondeadas estaran las esquinas del formulario*/
+}
+/*Se manda a llamar la subclase de la clase contenido-form*/
+.contenido-form .form-group {
+	position: relative;/*Se establece la posición en relación con su posición normal*/
+	margin-bottom: 15px;/*Establece el margen inferior de un elemento*/
+}
+/*Se manda a llamar la subclase de la clase contenido-form*/
+.contenido-form .form-control {
+	background-color: #f5f5f5;/*Establece color de fondo en la caja de respuesta*/
+	border: none;/*Se usa para eliminar los bordes por defecto que le dan los navegadores a los input y button*/
+	height: 45px;/*Establece la altura*/
+	border-radius: 3px;/*Indica que tan redondeadas estaran las esquinas del formulario*/
+	-webkit-box-shadow: none;/*webkit especifica la primera versión del navegador y la propieda box-shadow adjuta 
+	una o más sombras;*/
+	box-shadow: none;/*Añade efectos de sombra alrededor del marco de un elemento*/
+	font-weight: 400;/*Grosor de la letra*/
+	color: #101113;/*Color de la letra*/
+}
+/*Clase para la indicación de los campos*/
+.contenido-form .form-control::-webkit-input-placeholder {
+	color: rgba(16, 17, 19, 0.3);/*Establece el color de la letra*/
+}
+/*Clase para la indicación de los campos*/
+.contenido-form .form-control:-ms-input-placeholder {
+	color: rgba(16, 17, 19, 0.3);/*Establece el color de la letra*/
+}
+/*Clase para la indicación de los campos*/
+.contenido-form .form-control::placeholder {
+	color: rgba(16, 17, 19, 0.3);/*Establece el color de la letra*/
+}
+/*Clase para la indicación de los campos*/
+.contenido-form input[type="date"].form-control:invalid {
+	color: rgba(16, 17, 19, 0.3);/*Establece el color de la letra*/
+}
+/*Clase para darle apariencia al formulario*/
+.contenido-form select.form-control {
+	/*Las primeras dos propiedades son versiones no estándar de la propiedad appearence*/
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;/*No aplica un estilo espcial*/
+}
+/*Selector que permite juntar la clase con subclases para realizar modificaciones*/
+.contenido-form select.form-control+.select-arrow {
+	position: absolute;/*está posicionado en relación con la posicionado más cercano*/
+	right: 0px;/*No se establece su posición a la derecha*/
+	bottom: 6px;/*No se establece el borde inferior*/
+	width: 32px;/*define el ancho de las listas */
+	line-height: 32px;/*Especifica la altura de una línea*/
+	height: 32px;/*Establece la altura de un elemento*/
+	text-align: center;/*text-align especifica la alineación horizontal del texto en un elemento y center 
+	centra el texto*/
+	pointer-events: none;/*Defne que el no elemento racciona a eventos de puntero*/
+	color: #101113;/*Asigna color*/
+	font-size: 14px;/*Establece el tamaño de la fuente en pixeles*/
+}
+/*Selector que permite juntar la clase con subclases para realizar modificaciones*/
+.contenido-form select.form-control+.select-arrow:after {
+	content: '\279C';/*Se utiliza junto con los pseudoelementos del ::after y before para insertar su contenido
+	generado*/
+	display: block;/*Especifica el comportamiento de visualización de un elemento de bloque*/
+	-webkit-transform: rotate(90deg);/*webkit especifican la primera versión que funcionó con un prefijo*/
+	transform: rotate(90deg);/*transform permite rotar*/
+}
+
+/*Manda a llamar la subclase de la clase contenido-form*/
+.contenido-form .form-label {
+	color: #fff;/*Asigna color al texto de los label*/
+	font-size: 12px;/*Establece el tamaño de la letra*/
+	font-weight: 400;/*Establece el grosor de la letra*/
+	margin-bottom: 5px;/*Margen del botón*/
+	display: block;/*Especifica el comportamiento de visualización de un elemento de bloque*/
+	text-transform: uppercase;/*Es la transformación del texto para que todos los caracteres del texto elemento
+	sean mayúsculas*/
+}
+/*Manda a llamar la subclase de la clase contenido-form*/
+.contenido-form .submit-btn {
+	color: #101113;/*Asigna color al texto de los label*/
+	background-color:#bcaaa4;/*Asigna color al botón*/
+	font-weight: 700;/*Grosor de la letra*/
+	height: 50px;/*Establece la altura de un elemento*/
+	border: none;/*Se usa para eliminar los bordes por defecto que le dan los navegadores a los input y button*/
+	width: 100%;/*define el ancho de las listas */
+	display: block;/*Especifica el comportamiento de visualización de un elemento de bloque*/
+	border-radius: 3px;/*define el radio de las esquinas del elemento*/
+	text-transform: uppercase;/*Es la transformación del texto para que todos los caracteres del texto elemento
+	sean mayúsculas*/
+}
